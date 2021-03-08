@@ -1,0 +1,19 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="rXFtTWg5Xs/:%vu!phy^" x="383" y="152">
+    <statement name="LOOP">
+      <block type="inout_digital_write" id="*(A$ZTzTTvU!ag[j.5T*">
+        <value name="PIN">
+          <block type="math_number" id="`#yo7O{_vjK=~V;r0UJ5">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+        <value name="STAT">
+          <block type="inout_onoff" id="Z@`WY/b7,@J9+,tX+~YB">
+            <field name="BOOL">HIGH</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

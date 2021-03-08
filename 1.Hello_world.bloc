@@ -1,0 +1,28 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="serial_init" id="*UKx.H7=NAGs9]~X[7kp" x="394" y="16">
+    <field name="pin">0</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="base_setup_loop" id="Dzr#=0#5F|J,:!+??#[!" x="398" y="112">
+    <statement name="LOOP">
+      <block type="serial_write" id="kWyK3rAm2o7jNP|/7T0V">
+        <value name="CONTENT">
+          <shadow type="text" id="w|HUHhFX%O]R=ehI6P~i">
+            <field name="TEXT">Hello world</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="serial_write" id=";5hTH4Y6yn_%/(w;tO,Z">
+            <value name="CONTENT">
+              <shadow type="text" id="5Q[,oO/Ko=m42vM_Jd=F">
+                <field name="TEXT">Hi Otto</field>
+              </shadow>
+              <block type="serial_line" id="uIyIRxQMGdm|vX^hD:`@"></block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

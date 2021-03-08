@@ -1,0 +1,53 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="En7SnG_Id?ls$|~etp|N" x="244" y="51">
+    <statement name="LOOP">
+      <block type="inout_digital_write" id="9DBn*mNQ27b3d6?.+C%i">
+        <value name="PIN">
+          <block type="math_number" id="nQ*(Uq=;:F=f6+_.aemN">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+        <value name="STAT">
+          <block type="inout_onoff" id="l{ahW8p%e6XDC.9iI63j">
+            <field name="BOOL">HIGH</field>
+          </block>
+        </value>
+        <next>
+          <block type="base_delay" id="($X4pG~LjjXR`Hs3$3)X">
+            <field name="unite">s</field>
+            <value name="DELAY_TIME">
+              <shadow type="math_number" id="AOFf!*+Z[$5~z/P|?136">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="1@K3/)b$M/VZD7ftqd5y">
+                <value name="PIN">
+                  <block type="math_number" id="7+]4]lG2R)(i54AMf*a+">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+                <value name="STAT">
+                  <block type="inout_onoff" id="f=yFO}Ak${!d4oMW4l6L">
+                    <field name="BOOL">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="base_delay" id="l7B[s~bZ9rC~4#_n-Uzi">
+                    <field name="unite">s</field>
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="q]Gzg78!^EjY3VP0.73E">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,108 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="serial_init" id="stYem`xO@t24!C^mjk`l" x="249" y="-281">
+    <field name="pin">0</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="base_setup_loop" id="Z8n{9oH1oyiKN]98Xv/c" x="265" y="-180">
+    <statement name="DO">
+      <block type="variables_set_init" id="*L5RkLRY-|wabCwp;}*r">
+        <field name="VAR">pirVAlue</field>
+        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+        <value name="VALUE">
+          <block type="math_number" id="k-f:a,w}V7P64v^p7_Fv">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="I8qzxy^4H56^]l,I2k4;">
+        <field name="VAR">pirVAlue</field>
+        <value name="VALUE">
+          <block type="inout_analog_read" id="dX$X;?QCR$7oM%te37Ll">
+            <field name="broche">A2</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="d/L|;):@CrAQNI3?5..i">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id=",^+S[z0YZ6Wz0vB%;8D(">
+                <field name="OP">GTE</field>
+                <value name="A">
+                  <block type="variables_get" id=")19|E(]]HB]fcgo3?VAX">
+                    <field name="VAR">pirVAlue</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="dJ2QhIG$4iR|ZI1u6s,[">
+                    <field name="NUM">200</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="digital_write" id="J,YzZYPumuh%en;q*HEz">
+                <field name="STAT">HIGH</field>
+                <value name="PIN">
+                  <shadow type="math_number" id="oG(a2M=;gDNKui,bG6CK">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="serial_write" id="[fQ7LK8mt$-mHOt+^r{6">
+                    <value name="CONTENT">
+                      <shadow type="text" id="S)@^aI{f9ir^`a}opmak">
+                        <field name="TEXT">Motion Detected</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="serial_write" id="c{(m/pCn0V0zjuLpHkqE">
+                        <value name="CONTENT">
+                          <shadow type="text" id="XdqA:,E02OoQWdnT:RG;">
+                            <field name="TEXT">Motion Detected</field>
+                          </shadow>
+                          <block type="serial_line" id="!=wI4kVx+fTA[jW!N3Uj"></block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="digital_write" id="-8@U(9VY6{Gl3h84`X.+">
+                <field name="STAT">LOW</field>
+                <value name="PIN">
+                  <shadow type="math_number" id="[n3d;LT4xeGMqce|mxH@">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="serial_write" id="`[dXos$O!m)V44jU]U+H">
+                    <value name="CONTENT">
+                      <shadow type="text" id="DrqfrMfNc;)uTpbOLMjB">
+                        <field name="TEXT">Motion Ended</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="serial_write" id="+P/f=#T6:lsErH[}mXAF">
+                        <value name="CONTENT">
+                          <shadow type="text" id=")Q[O}i|:C$AAw7a,HWS7">
+                            <field name="TEXT">Motion Detected</field>
+                          </shadow>
+                          <block type="serial_line" id="p?2,@I~!]}f;1eUW3uar"></block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

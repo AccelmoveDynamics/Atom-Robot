@@ -1,0 +1,51 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="serial_init" id="stYem`xO@t24!C^mjk`l" x="249" y="-281">
+    <field name="pin">0</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="base_setup_loop" id="Z8n{9oH1oyiKN]98Xv/c" x="265" y="-180">
+    <statement name="LOOP">
+      <block type="variables_set" id="I8qzxy^4H56^]l,I2k4;">
+        <field name="VAR">pirVAlue</field>
+        <value name="VALUE">
+          <block type="inout_analog_read" id="dX$X;?QCR$7oM%te37Ll">
+            <field name="broche">A2</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_write" id="6vMKPmcBzfhj,W)PGSs3">
+            <value name="CONTENT">
+              <shadow type="text" id="@qj(r|-c]iVv@USA%}@4">
+                <field name="TEXT">Hi Otto</field>
+              </shadow>
+              <block type="variables_get" id=")19|E(]]HB]fcgo3?VAX">
+                <field name="VAR">pirVAlue</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_write" id="M=T8=TcqkgA)*}2x{m0~">
+                <value name="CONTENT">
+                  <shadow type="text" id="@qj(r|-c]iVv@USA%}@4">
+                    <field name="TEXT">Hi Otto</field>
+                  </shadow>
+                  <block type="serial_line" id="e8g$gej!yi(hI`x][vx}"></block>
+                </value>
+                <next>
+                  <block type="base_delay" id="xR9IWLv:NK8($bM$C*rF">
+                    <field name="unite">s</field>
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="y*}][a9H]`=F+8`QoY9.">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

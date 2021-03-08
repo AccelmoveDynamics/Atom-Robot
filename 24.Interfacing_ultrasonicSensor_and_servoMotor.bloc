@@ -1,0 +1,105 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="ultrason" id="^RRQ[_2^Zfm,fZA^{!jL" x="650" y="-67">
+    <value name="a">
+      <block type="math_number" id="#6EKyQ/2$wdYG}ta;[n1">
+        <field name="NUM">10</field>
+      </block>
+    </value>
+    <value name="b">
+      <block type="math_number" id="GeY!4z5yG-hxP40bl@ZA">
+        <field name="NUM">4</field>
+      </block>
+    </value>
+  </block>
+  <block type="serial_init" id="@Pcov{/Aug@B#Q9mSLtc" x="392" y="-48">
+    <field name="pin">0</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="base_setup_loop" id="QkGX#I3[0Bfr8wm2!kdE" x="361" y="30">
+    <statement name="DO">
+      <block type="variables_set" id="L20W;qG4:n*Rz$p/O}#c">
+        <field name="VAR">distance</field>
+        <value name="VALUE">
+          <block type="ultrason_distance" id="=.9wumFvWA,{R+D-sj7`">
+            <value name="nb">
+              <block type="math_number" id="|8pqQT(CaV6GXWxT{BTB">
+                <field name="NUM">104</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="serial_write" id="uS14#(4VMo$!~=,gPUXa">
+        <value name="CONTENT">
+          <shadow type="text" id="V1_f{lj`8l~!w^YA#:Nu">
+            <field name="TEXT">Hi Otto</field>
+          </shadow>
+          <block type="variables_get" id="@)bs?0i6#6*x$;ALR/}5">
+            <field name="VAR">distance</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_write" id="W74S8[D,^0.mx!kxE}p@">
+            <value name="CONTENT">
+              <shadow type="text" id="np-b9XTijVBBh/J{:oy?">
+                <field name="TEXT">Hi Otto</field>
+              </shadow>
+              <block type="serial_line" id="Brn*hHr,w|y]6#|N2k;e"></block>
+            </value>
+            <next>
+              <block type="controls_if" id="OY%nF**,4A.|UWAJPV8d">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="jtR0^zj0I4~p,C?Y]aYH">
+                    <field name="OP">GTE</field>
+                    <value name="A">
+                      <block type="variables_get" id="^*niTnQE)i6@r]MYPJFQ">
+                        <field name="VAR">distance</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="E%q)Sj$8B/ut%6G!fQrU">
+                        <field name="NUM">20</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="servo_move" id="Y4Y1V*aTDXEync/9eL,Q">
+                    <value name="PIN">
+                      <shadow type="math_number" id="C}0=%9Wy+@i]}?=v}3*V">
+                        <field name="NUM">6</field>
+                      </shadow>
+                    </value>
+                    <value name="DEGREE">
+                      <shadow type="inout_angle_maths" id="bY$=MS{k4_[3lFhjn^sw">
+                        <field name="ANGLE">180</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="servo_move" id="C_Hz9/jpSmu.[O9K!^Vw">
+                    <value name="PIN">
+                      <shadow type="math_number" id="bjv~T[,QdN4LNkx{DV?1">
+                        <field name="NUM">6</field>
+                      </shadow>
+                    </value>
+                    <value name="DEGREE">
+                      <shadow type="inout_angle_maths" id="J4a%uPA@SzIt}L4#,dt=">
+                        <field name="ANGLE">45</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

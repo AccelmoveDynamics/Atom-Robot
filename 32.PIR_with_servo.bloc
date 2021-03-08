@@ -1,0 +1,100 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="serial_init" id="stYem`xO@t24!C^mjk`l" x="249" y="-281">
+    <field name="pin">0</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="base_setup_loop" id="Z8n{9oH1oyiKN]98Xv/c" x="265" y="-180">
+    <statement name="DO">
+      <block type="variables_set_init" id="*L5RkLRY-|wabCwp;}*r">
+        <field name="VAR">pirVAlue</field>
+        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+        <value name="VALUE">
+          <block type="math_number" id="k-f:a,w}V7P64v^p7_Fv">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="I8qzxy^4H56^]l,I2k4;">
+        <field name="VAR">pirVAlue</field>
+        <value name="VALUE">
+          <block type="inout_analog_read" id="dX$X;?QCR$7oM%te37Ll">
+            <field name="broche">A2</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_write" id="i`AS(pZ5f;/7mF_5[6`3">
+            <value name="CONTENT">
+              <shadow type="text" id="XdqA:,E02OoQWdnT:RG;">
+                <field name="TEXT">Motion Detected</field>
+              </shadow>
+              <block type="variables_get" id="=)b4bsFqB3qO=f!sNZX?">
+                <field name="VAR">pirVAlue</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_write" id="7qq!odJ?_p#zkD9yQD2W">
+                <value name="CONTENT">
+                  <shadow type="text" id="XdqA:,E02OoQWdnT:RG;">
+                    <field name="TEXT">Motion Detected</field>
+                  </shadow>
+                  <block type="serial_line" id=",%DSOJey6fpQ?r/|bfgo"></block>
+                </value>
+                <next>
+                  <block type="controls_if" id="d/L|;):@CrAQNI3?5..i">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id=",^+S[z0YZ6Wz0vB%;8D(">
+                        <field name="OP">GTE</field>
+                        <value name="A">
+                          <block type="variables_get" id=")19|E(]]HB]fcgo3?VAX">
+                            <field name="VAR">pirVAlue</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="dJ2QhIG$4iR|ZI1u6s,[">
+                            <field name="NUM">200</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="servo_move" id="62{CAbeW*SyoSu=kft@f">
+                        <value name="PIN">
+                          <shadow type="math_number" id="1T((.XT43R:2rVK8-l.~">
+                            <field name="NUM">6</field>
+                          </shadow>
+                        </value>
+                        <value name="DEGREE">
+                          <shadow type="inout_angle_maths" id="6u6r[B#69/`8=C0s6^Ij">
+                            <field name="ANGLE">90</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="servo_move" id="ZZC?P!uayA.kHPtKMl3#">
+                        <value name="PIN">
+                          <shadow type="math_number" id="{E0NF9kiG8_te0:blct-">
+                            <field name="NUM">6</field>
+                          </shadow>
+                        </value>
+                        <value name="DEGREE">
+                          <shadow type="inout_angle_maths" id="8*ah#z88.,*,X4,5SM4D">
+                            <field name="ANGLE">0</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

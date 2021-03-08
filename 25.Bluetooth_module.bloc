@@ -1,0 +1,56 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="bluetooth_init" id=".$d/s@S]H-t`uO;#N!8*" x="431" y="-77">
+    <field name="SPEED">9600</field>
+    <value name="PIN1">
+      <shadow type="math_number" id="Iceqq]1!mhDoxB)3_]wI">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="PIN2">
+      <shadow type="math_number" id="mUj58u|/:$)*l/u~;J#-">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="base_setup_loop" id="hs!9ytQ#RO;E8ct%gF7W" x="301" y="-4">
+    <statement name="LOOP">
+      <block type="bluetooth_b" id="qz$!K:MLj,g*n[c{o^VH">
+        <value name="CASE0">
+          <block type="text_char" id="j2cYb{;!20P[t]Gg{gqv">
+            <field name="TEXT">a</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="digital_write" id="DiU:]i:YP`(^i8i~7(MS">
+            <field name="STAT">HIGH</field>
+            <value name="PIN">
+              <shadow type="math_number" id="Zn#L3A![_15u}j+s(+~[">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="bluetooth_b" id=":mgM,Zm}zm=ABI~xbvjm">
+            <value name="CASE0">
+              <block type="text_char" id="ci2U%JwMRxfSzFV9mqw%">
+                <field name="TEXT">b</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="digital_write" id="ePE=m~f6FxS;bEEYx2/`">
+                <field name="STAT">LOW</field>
+                <value name="PIN">
+                  <shadow type="math_number" id="r^ftOiCa.zz9AQyzCO+V">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,97 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="serial_init" id="dCMEt$-{Qo}M8x0@O!]#" x="212" y="-27">
+    <field name="pin">0</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="ultrason" id="zg_CEvU:*aS_pw/JfZJ*" x="410" y="-30">
+    <value name="a">
+      <block type="math_number" id="4=g?QAUj6*$n9DiyB0ar">
+        <field name="NUM">10</field>
+      </block>
+    </value>
+    <value name="b">
+      <block type="math_number" id="3Q`S6!5+]If:unf9(-|3">
+        <field name="NUM">4</field>
+      </block>
+    </value>
+  </block>
+  <block type="base_setup_loop" id="6k2rw5K6qH`[;3{$.#!z" x="232" y="68">
+    <statement name="LOOP">
+      <block type="variables_set" id="bDwN=DEb:1;6}#jz^lN^">
+        <field name="VAR">distance</field>
+        <value name="VALUE">
+          <block type="ultrason_distance" id="h$mMQ7NyjT={)/Ac##nF">
+            <value name="nb">
+              <block type="math_number" id="HwR+78vh7oh$p{Bc~IEf">
+                <field name="NUM">104</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="serial_write" id="s4?^=gFk,Guv^FwXzin[">
+            <value name="CONTENT">
+              <shadow type="text" id="uIb7Y57MudS+b.hvM$){">
+                <field name="TEXT">Hi Otto</field>
+              </shadow>
+              <block type="variables_get" id="~oV#kaH6)0P`K9OC0*o_">
+                <field name="VAR">distance</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_write" id="OgVKl=|zkt8}sf?H#z!a">
+                <value name="CONTENT">
+                  <shadow type="text" id="uIb7Y57MudS+b.hvM$){">
+                    <field name="TEXT">Hi Otto</field>
+                  </shadow>
+                  <block type="serial_line" id="rG-.5OTHA?|FD5g0@,4r"></block>
+                </value>
+                <next>
+                  <block type="controls_if" id="i.dww(Fh9_7DyIXSTlH:">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="ASD,50D.m34_sHI?8nrO">
+                        <field name="OP">GTE</field>
+                        <value name="A">
+                          <block type="variables_get" id="rzB}plN4]xmY^!Bz{8^q">
+                            <field name="VAR">distance</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="9M7mE*l)f_1(z=qkiUB#">
+                            <field name="NUM">20</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="digital_write" id="C)e#b8M?NZ,}g|-D5ncN">
+                        <field name="STAT">HIGH</field>
+                        <value name="PIN">
+                          <shadow type="math_number" id="c0.3PP.+9rC.*/)z4B]~">
+                            <field name="NUM">5</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="digital_write" id="4b04ogOUiTTKnx`,LY?=">
+                        <field name="STAT">LOW</field>
+                        <value name="PIN">
+                          <shadow type="math_number" id="}_XX2J3ly)A{vfe0`NrR">
+                            <field name="NUM">5</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

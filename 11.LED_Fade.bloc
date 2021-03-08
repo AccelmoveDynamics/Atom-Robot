@@ -1,0 +1,122 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="serial_init" id="6J)t#_A*{867fop24xkQ" x="347" y="0">
+    <field name="pin">0</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="base_setup_loop" id="$.,4eGwexT:{Y,alXK-J" x="338" y="76">
+    <statement name="DO">
+      <block type="variables_set_init" id="o9%k]4dBb{8pn@s1%q%6">
+        <field name="VAR">fadeVAlue</field>
+        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+        <value name="VALUE">
+          <block type="math_number" id="D5+O#wsG;H%$^+;[IN}f">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="serial_write" id="|U6,/z%=_wp.Df]nV9^R">
+        <value name="CONTENT">
+          <shadow type="text" id="5l.2Rts6;c,5mkta[%bA">
+            <field name="TEXT">Hi Otto</field>
+          </shadow>
+          <block type="variables_get" id="C1@o[}]h+WHcy1H.Xsv^">
+            <field name="VAR">fadeVAlue</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_write" id="6Dxki2BVy#{zD2V8Z_lv">
+            <value name="CONTENT">
+              <shadow type="text" id="nx,^}ugfICv/!Tn^zRBI">
+                <field name="TEXT">Hi Otto</field>
+              </shadow>
+              <block type="serial_line" id="uhDqmm,gRP*j~fAO]%PQ"></block>
+            </value>
+            <next>
+              <block type="controls_for" id="8M8.VJ8U(;d]w!8VKZ[R">
+                <field name="VAR">i</field>
+                <value name="FROM">
+                  <block type="math_number" id="inE*]BMxlj%Z~8=ND,zR">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <block type="math_number" id="}B_x3D-y@@=rD8iN-F4}">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+                <value name="BY">
+                  <block type="math_number" id="N?_!gdGE-f5U,rN8q-Lc">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="inout_analog_write" id="r73b%@poLSQ+dH8,:0I[">
+                    <field name="broche">5</field>
+                    <value name="NUM">
+                      <block type="variables_get" id="wpaQ]Cb`a{LOxg94nEfI">
+                        <field name="VAR">fadeVAlue</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="base_delay" id="XN96CUv_JK:5tjDn_SH8">
+                        <field name="unite">m</field>
+                        <value name="DELAY_TIME">
+                          <shadow type="math_number" id="],o$oOpXD)j~+/?rI53}">
+                            <field name="NUM">30</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_for" id="ugbfL3Jbht/)AC~nW9[_">
+                    <field name="VAR">i</field>
+                    <value name="FROM">
+                      <block type="math_number" id="U@uH^Uo?IYKO|t2#C#@E">
+                        <field name="NUM">255</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="xiGk8[voC}kluM@]qT8[">
+                        <field name="NUM">5</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="E:6`Ceh.5pIP?b3SJ@|J">
+                        <field name="NUM">-5</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="inout_analog_write" id="dD?pvZ/Zm[vc~{MNdHOD">
+                        <field name="broche">5</field>
+                        <value name="NUM">
+                          <block type="variables_get" id="|$6~{b=^GbtGpcneWEeB">
+                            <field name="VAR">fadeVAlue</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="base_delay" id="]T-cFo9SwVWVKf#?_2m~">
+                            <field name="unite">m</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="^eRp1Q(RX.@@8X_5it=T">
+                                <field name="NUM">30</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

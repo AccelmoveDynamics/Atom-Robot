@@ -1,0 +1,41 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id=";Qb~64cjF{Pj=)m.y@Ay" x="-2141" y="-1462">
+    <statement name="LOOP">
+      <block type="variables_set" id="2,P~P(-GA7ykh6!^IT!B">
+        <field name="VAR">sensorValue</field>
+        <value name="VALUE">
+          <block type="inout_analog_read" id="qR0G0KTMU|9_z^stKt9n">
+            <field name="broche">A0</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_write" id="J@n/b|:.R75p_~bgLwqP">
+            <value name="CONTENT">
+              <shadow type="text" id="t*{H(^:C.u4jo}#fbuCr">
+                <field name="TEXT">Hi Otto</field>
+              </shadow>
+              <block type="variables_get" id="3!`GBxT9e_|uk3Vr=I]Q">
+                <field name="VAR">sensorValue</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_write" id="sd?@L,SL^W{Jb`;lkUFb">
+                <value name="CONTENT">
+                  <shadow type="text" id=")2.A}sLO;:Ygg}]E]OrY">
+                    <field name="TEXT">Hi Otto</field>
+                  </shadow>
+                  <block type="serial_line" id="r5#:=3Gic9~a7RGvK7h6"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="serial_init" id="GVn[}Y69BceXKCNln`N/" x="-2051" y="-1459">
+    <field name="pin">0</field>
+    <field name="SPEED">9600</field>
+  </block>
+</xml>

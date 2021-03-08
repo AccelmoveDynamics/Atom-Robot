@@ -1,0 +1,78 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="bluetooth_init" id=".$d/s@S]H-t`uO;#N!8*" x="624" y="-96">
+    <field name="SPEED">9600</field>
+    <value name="PIN1">
+      <shadow type="math_number" id="Iceqq]1!mhDoxB)3_]wI">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="PIN2">
+      <shadow type="math_number" id="mUj58u|/:$)*l/u~;J#-">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="base_setup_loop" id="hs!9ytQ#RO;E8ct%gF7W" x="232" y="18">
+    <statement name="DO">
+      <block type="servo_move" id="Mi(ko2g8CCS;3~bTZ]dr">
+        <value name="PIN">
+          <shadow type="math_number" id="hT2WuO[ZW[82HX#cmdAg">
+            <field name="NUM">6</field>
+          </shadow>
+        </value>
+        <value name="DEGREE">
+          <shadow type="inout_angle_maths" id="]]9c@|=dn1D7xjwWCw5Q">
+            <field name="ANGLE">0</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="bluetooth_b" id="qz$!K:MLj,g*n[c{o^VH">
+        <value name="CASE0">
+          <block type="text_char" id="j2cYb{;!20P[t]Gg{gqv">
+            <field name="TEXT">x</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="servo_move" id="S#`v3In1duIl(-l48@]@">
+            <value name="PIN">
+              <shadow type="math_number" id="5/1}0#?.PD%hS63k60-~">
+                <field name="NUM">6</field>
+              </shadow>
+            </value>
+            <value name="DEGREE">
+              <shadow type="inout_angle_maths" id="U8Y|fJjacM/K-uz`8s3D">
+                <field name="ANGLE">45</field>
+              </shadow>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="bluetooth_b" id=":mgM,Zm}zm=ABI~xbvjm">
+            <value name="CASE0">
+              <block type="text_char" id="ci2U%JwMRxfSzFV9mqw%">
+                <field name="TEXT">y</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="servo_move" id="O.7i*VQ@|H*Wf+U2m`:f">
+                <value name="PIN">
+                  <shadow type="math_number" id="{bsX?DSMRoteC2[diZ?/">
+                    <field name="NUM">6</field>
+                  </shadow>
+                </value>
+                <value name="DEGREE">
+                  <shadow type="inout_angle_maths" id="M^*U6{qRc:5+Bs=3n27!">
+                    <field name="ANGLE">180</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
